@@ -29,7 +29,6 @@ namespace mycon_recorder
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +41,6 @@ namespace mycon_recorder
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.listBoxMessageLog = new System.Windows.Forms.ListBox();
             this.labelLatestMessage = new System.Windows.Forms.Label();
-            this.timerPlay = new System.Windows.Forms.Timer(this.components);
             this.textBoxIPAddr = new System.Windows.Forms.TextBox();
             this.labelPlayTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -71,14 +69,14 @@ namespace mycon_recorder
             // openOToolStripMenuItem
             // 
             this.openOToolStripMenuItem.Name = "openOToolStripMenuItem";
-            this.openOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openOToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.openOToolStripMenuItem.Text = "Open(&O)";
             this.openOToolStripMenuItem.Click += new System.EventHandler(this.openOToolStripMenuItem_Click);
             // 
             // saveAsSToolStripMenuItem
             // 
             this.saveAsSToolStripMenuItem.Name = "saveAsSToolStripMenuItem";
-            this.saveAsSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsSToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.saveAsSToolStripMenuItem.Text = "Save as (&S)";
             this.saveAsSToolStripMenuItem.Click += new System.EventHandler(this.saveAsSToolStripMenuItem_Click);
             // 
@@ -152,6 +150,8 @@ namespace mycon_recorder
             // 
             // labelLatestMessage
             // 
+            this.labelLatestMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLatestMessage.BackColor = System.Drawing.SystemColors.Window;
             this.labelLatestMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelLatestMessage.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -160,12 +160,6 @@ namespace mycon_recorder
             this.labelLatestMessage.Size = new System.Drawing.Size(252, 20);
             this.labelLatestMessage.TabIndex = 4;
             this.labelLatestMessage.Text = "000.000 UDLRABCDLlRrET12H";
-            // 
-            // timerPlay
-            // 
-            this.timerPlay.Enabled = true;
-            this.timerPlay.Interval = 1;
-            this.timerPlay.Tick += new System.EventHandler(this.timerPlay_Tick);
             // 
             // textBoxIPAddr
             // 
@@ -199,7 +193,6 @@ namespace mycon_recorder
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.listBoxMessageLog);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -228,7 +221,6 @@ namespace mycon_recorder
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBoxMessageLog;
         private System.Windows.Forms.Label labelLatestMessage;
-        private System.Windows.Forms.Timer timerPlay;
         private System.Windows.Forms.TextBox textBoxIPAddr;
         private System.Windows.Forms.Label labelPlayTime;
     }
