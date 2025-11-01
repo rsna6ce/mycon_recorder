@@ -167,7 +167,7 @@ namespace mycon_recorder
             this.textBoxIPAddr.Name = "textBoxIPAddr";
             this.textBoxIPAddr.Size = new System.Drawing.Size(128, 19);
             this.textBoxIPAddr.TabIndex = 6;
-            this.textBoxIPAddr.Text = "192.168.0.255";
+            this.textBoxIPAddr.Text = "192.168.2.255";
             // 
             // labelPlayTime
             // 

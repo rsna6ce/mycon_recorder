@@ -20,7 +20,7 @@ namespace mycon_recorder
     {
         private UdpClient _udpClient = null;
         private const int _port = 59630;
-        private const int _port_offset_for_debug = 1;
+        private const int _port_offset_for_debug = 0;
         private System.Diagnostics.Stopwatch _sw;
         private bool _recording = false;
         private bool _recording_waiting = false;
@@ -232,12 +232,13 @@ namespace mycon_recorder
             }
 
             long startGlobal = _sw.ElapsedMilliseconds;
-            long delayMs = (long)(numericUpDown1.Value * 1000);
+            int delayMs = (int)(numericUpDown1.Value * 1000);
+            Thread.Sleep(delayMs);
 
             while (_playThreadRunning)
             {
                 long currentGlobal = _sw.ElapsedMilliseconds;
-                long elapsedMs = currentGlobal - startGlobal + delayMs;
+                long elapsedMs = currentGlobal - startGlobal;
 
                 bool shouldStop = false;
                 int currentIndex = 0;
@@ -291,7 +292,7 @@ namespace mycon_recorder
                 // スピンロックで正確なタイミングまで待機
                 if (nextTargetMs > elapsedMs)
                 {
-                    long targetGlobal = startGlobal + nextTargetMs - delayMs;
+                    long targetGlobal = startGlobal + nextTargetMs;
                     while (_sw.ElapsedMilliseconds < targetGlobal && _playThreadRunning)
                     {
                         Thread.SpinWait(500); // 約0.05～0.1ms待機
