@@ -231,9 +231,9 @@ namespace mycon_recorder
                 return;
             }
 
-            long startGlobal = _sw.ElapsedMilliseconds;
             int delayMs = (int)(numericUpDown1.Value * 1000);
             Thread.Sleep(delayMs);
+            long startGlobal = _sw.ElapsedMilliseconds;
 
             while (_playThreadRunning)
             {
