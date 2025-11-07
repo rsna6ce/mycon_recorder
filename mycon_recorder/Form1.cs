@@ -152,6 +152,7 @@ namespace mycon_recorder
             else
             {
                 listBoxMessageLog.Items.Clear();
+                labelLatestMessage.Text = "";
                 _recording_waiting = checkBoxWaiging.Checked;
                 if (!_recording_waiting)
                 {
